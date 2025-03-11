@@ -1,0 +1,46 @@
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+  
+  .scroll-section {
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+  
+  /* Ensure all child elements of scroll-section take full height */
+  .scroll-section > div {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Adjust TaskPaginationSection and TitleTopSection to be fixed */
+  .task-pagination-section,
+  .title-top-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+  
+  /* Adjust main content to account for fixed headers */
+  .scroll-section > div > *:not(.task-pagination-section):not(.title-top-section) {
+    padding-top: 100px; /* Adjust this value based on the combined height of your fixed sections */
+  }
+  
+  /* Hide scrollbar for cleaner look */
+  .scroll-container {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  

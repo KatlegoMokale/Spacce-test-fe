@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  overflow-x: hidden;
+  
+}
+
+.sectionscroll {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+
+.sectionsnap {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+
+.perspective {
+  perspective: 300px;
+}
+
+/* ///Add blur to gradient */
+@layer utilities {
+  .bg-gradient-custom {
+    background-image: radial-gradient(180% 120vh at top, rgba(26,26,26,1) 72%, rgba(74,29,150,1) 80%, rgba(63,127,254,1) 90%);
+
+  }
+  .bg-gradient-custom-2 {
+      background-image: radial-gradient(150% 120vh at top, rgba(26,26,26,1) 50%, rgba(74,29,150,1) 60%, rgba(63,127,254,1) 70%, rgba(255,255,255,1) 80%);
+  }
+  .bg-gradient-custom-bottom {
+    background-image: radial-gradient(220% 115vh at bottom, rgba(26,26,26,1) 60%, rgba(74,29,150,1) 75%, rgba(63,127,254,1) 81%, rgb(255, 255,255, 0)  88%);
+
+  }
+  .bg-gradient-custom-bottom-welcome{
+    background-image: radial-gradient(160% 165vh at bottom, rgba(26,26,26,1) 60%, rgba(74,29,150,1) 75%, rgba(63,127,254,1) 81%, rgb(255, 255,255, 0)  88%);
+  }
+
+  .bg-gradient-custom-center {
+    background-image: radial-gradient(300% 370vh at center, rgba(26,26,26,1) 60%, rgba(74,29,150,1) 75%, rgba(63,127,254,1) 81%, rgb(255, 255,255, 0)  88%);
+  }
+
+  .bg-gradient-custom-center-home {
+    background-image: radial-gradient(150% 80vh at center, rgba(26,26,26,1) 60%, rgba(74,29,150,1) 75%, rgba(63,127,254,1) 81%, rgb(255, 255,255, 0)  88%);
+  }
+.bg-gradient-custom-primary {
+  background-image: radial-gradient(70% 12vh at bottom, rgba(26,26,26,1) 60%, rgb(26, 26, 26) 40%, rgba(74,29,150,1) 100%);
+  fill-opacity: 40%;
+}
+
+.badge-gradient{
+  /* filter: drop-shadow(0px_0px_141px_20px_rgba(111,70,232,1));  */
+  filter: drop-shadow(0 0 20px rgba(111, 70, 232, 0.8)) drop-shadow(0 0 40px rgba(111, 70, 232, 0.6))
+  drop-shadow(0 0 60px rgba(111, 70, 232, 0.4)) drop-shadow(0 0 80px rgba(111, 70, 232, 0.2));
+  width:480px; 
+  height:480px; 
+}
+.hero-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent -50%, rgb(255, 255, 255) 100%, transparent 0%, rgb(255, 255, 255) 100%, transparent 100%);
+}
+
+.purple-mask {
+  -webkit-mask-image: linear-gradient(to right, rgba(21, 21, 26, 1) 40%,  rgba(21, 21, 26, 1) 47%,rgba(92, 40, 223, 1) 66%, rgba(255, 89, 183, 1) 100%);
+}
+
+.bg-gradient-custom-primary-last {
+  background-image: radial-gradient(220% 125vh at bottom, rgba(26,26,26,1) 75%, rgba(74,29,150,1) 85%, rgba(63,127,254,1) 100%);
+  position:static;
+}
+
+.bg-gradient-custom-primary-Company {
+  background-image: radial-gradient(220% 240vh at bottom, rgba(26,26,26,1) 75%, rgba(74,29,150,1) 85%, rgba(63,127,254,1) 100%);
+  position:static;
+}
+.bg-gradient-custom-primary-Company-2 {
+  background-image: radial-gradient(220% 320vh at bottom, rgba(26,26,26,1) 75%, rgba(74,29,150,1) 85%, rgba(63,127,254,1) 100%);
+  position:static;
+}
+.radial-gradientSmall {
+  border-radius: 50%;
+  background-color: #5C1299;
+  box-shadow:
+    0 0 50px 30px #5C1299,
+    0 0 80px 60px #C392FF
+}
+
+
+}
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+
