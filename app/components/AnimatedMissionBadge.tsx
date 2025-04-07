@@ -58,8 +58,8 @@ const AnimatedMissionBadge: React.FC<AnimatedMissionBadgeProps> = ({
       badge,
       {
         x: "-50%",
-        y: "-50%",
-        scale: 1,
+        y: "-70%",
+        scale: 0.9,
         top: "50%",
         left: "50%",
       },
