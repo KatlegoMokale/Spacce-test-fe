@@ -57,8 +57,9 @@ const MissionTasksText = ({ questions, onSubmit }: MissionTasksTextProps) => {
   };
 
   return (
-    <section className="w-full h-screen flex flex-col items-start justify-start pr-8 pt-40">
-      <div className="grid grid-cols-5 w-full pl-24 h-[calc(100vh-12rem)]">
+    <section className="w-full h-screen flex flex-col items-start justify-center pt-40">
+      <div className=" container mx-auto">
+              <div className="grid grid-cols-5 w-full h-[calc(100vh-12rem)]">
         <div className="col-span-3 flex flex-col h-full">
           <div 
             ref={questionsContainerRef}
@@ -148,6 +149,8 @@ const MissionTasksText = ({ questions, onSubmit }: MissionTasksTextProps) => {
           </div>
         </div>
       </div>
+      </div>
+
     </section>
   );
 };

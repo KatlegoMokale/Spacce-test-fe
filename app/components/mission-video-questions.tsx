@@ -183,11 +183,12 @@ const MissionVideoQuestions = ({
           )}
 
           {isDrawerOpen && (
-            <div className="fixed left-0 top-0 h-full w-[20%] bg-white shadow-lg z-50">
+            <div className="fixed left-0 top-0 h-full w-[28%] bg-white shadow-lg z-50">
               <button onClick={toggleDrawer} className="absolute top-4 right-4">
                 <ChevronUp />
               </button>
-              <div className="flex-1 overflow-y-auto p-4 space-y-6 pt-16">
+              <div className=" h-full container mx-auto flex justify-center pt-20">
+                              <div className="flex-1 overflow-y-auto p-4 space-y-6 pt-16">
                 {questions.map((question, index) => (
                   <div
                     key={question.id}
@@ -206,6 +207,8 @@ const MissionVideoQuestions = ({
                   </div>
                 ))}
               </div>
+              </div>
+
             </div>
           )}
         </div>
