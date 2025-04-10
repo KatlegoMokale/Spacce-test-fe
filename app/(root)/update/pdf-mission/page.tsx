@@ -75,6 +75,12 @@ const MissionPdf = () => {
     }
   };
 
+  const handleButtonScroll = (sectionRef: React.RefObject<HTMLDivElement>) => {
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     const options = {
       root: containerRef.current,
@@ -188,7 +194,8 @@ const MissionPdf = () => {
 
       <div
         ref={containerRef}
-        className="h-full overflow-y-auto snap-y snap-mandatory pt-16"
+        className="h-full overflow-hidden snap-y snap-mandatory pt-16"
+        onWheel={(e) => e.preventDefault()}
       >
         <div ref={startSectionRef} className="snap-start h-screen">
           <StartSection>
@@ -204,7 +211,11 @@ const MissionPdf = () => {
                   </h1>
                 </div>
                 <div className="flex justify-center items-center">
-                  <Button variant={"default"} className="w-[250px] h-[50px] flex items-center justify-center gap-2 bg-[#36CEF8]">
+                  <Button
+                    variant={"default"}
+                    className="w-[250px] h-[50px] flex items-center justify-center gap-2 bg-[#36CEF8]"
+                    onClick={() => handleButtonScroll(section2Ref)}
+                  >
                     See instructions <Mouse />
                   </Button>
                 </div>
@@ -228,13 +239,15 @@ const MissionPdf = () => {
               employee then links the various blueprints to the leaders​
             </p>
             <p className="pt-10 pb-12 flex items-center gap-2">
-              See instructions <Mouse />
+              <Button
+                variant={"default"}
+                className="w-[250px] h-[50px] flex items-center justify-center gap-2 bg-[#36CEF8]"
+                onClick={() => handleButtonScroll(section3Ref)}
+              >
+                See instructions <Mouse />
+              </Button>
             </p>
-            {/* <div className="pb-12">
-              <Mouse />
-            </div> */}
-            <div className="flex justify-center items-center border border-dashed border-black bg-neutral-100  aspect-square h-[320px] rounded-[15px]">
-              {" "}
+            <div className="flex justify-center items-center border border-dashed border-black bg-neutral-100 aspect-square h-[320px] rounded-[15px]">
               Meet a Legend Badge
             </div>
           </div>

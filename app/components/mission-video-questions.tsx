@@ -17,7 +17,7 @@ interface MissionVideoQuestionsProps {
 
 const MissionVideoQuestions = ({
   questions,
-  onSubmit,
+  // onSubmit,
 }: MissionVideoQuestionsProps) => {
   const [activeQuestionId, setActiveQuestionId] = useState<number | null>(null);
   const [answers, setAnswers] = useState<{ [key: number]: string }>({});
@@ -56,13 +56,13 @@ const MissionVideoQuestions = ({
     }));
   };
 
-  const handleSubmit = () => {
-    onSubmit(answers);
-  };
+  // const handleSubmit = () => {
+  //   onSubmit(answers);
+  // };
 
-  const isAllQuestionsAnswered = () => {
-    return questions.every((q) => answers[q.id] && answers[q.id].trim() !== "");
-  };
+  // const isAllQuestionsAnswered = () => {
+  //   return questions.every((q) => answers[q.id] && answers[q.id].trim() !== "");
+  // };
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
