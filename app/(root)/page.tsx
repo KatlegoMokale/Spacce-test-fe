@@ -17,6 +17,10 @@ export default function Home() {
     router.push("/update/standard-mission");
   };
 
+  const handleNewMissionVideo = () => {
+    router.push("/update/pdf-mission");
+  };
+
   const handleLogin = () => {
     router.push("/login");
   };
@@ -58,6 +62,7 @@ export default function Home() {
     <div className="grid grid-cols-2 gap-4 px-40 h-screen py-52 bg-gradient-custom-center-home">
       <div className="col-span-2 text-white text-opacity-90 text-lg">Page Navigation</div>
       <Button variant={"primary"} className=" border-green-300" onClick={handleNewMission}>New Mission</Button>
+      <Button variant={"primary"} className=" border-green-300" onClick={handleNewMissionVideo}>New Mission Video</Button>
       <div></div>
       <Button variant={"primary"} onClick={handlelandingPage}>Landing Page</Button>
       <Button variant={"primary"} onClick={handleLogin}>Login</Button>
